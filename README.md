@@ -18,6 +18,7 @@ Magento ver 2.2.3
 * Enable CAPTCHA STORE => Configuration => Customer Configuration => CAPTCHA tab
 
 ## Faqs backend screen shot
+[![Faqs Settings](faqsSettings.jpg)](/uri)
 [![Faqs Grid](faqsAdminGrid.jpg)](/uri)
 [![Faqs Admin Email](faqsAdminEmil.jpg)](/uri)
 
