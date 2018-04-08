@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="faqs_submit_question_confirm_email_template" label="Submit Your Question" file="submit_question_confirm.html" type="html" module="Solutionexcel_Faqs" area="frontend"/>
+	<template id="faqs_submit_question_admin_email_template" label="Submit New Question" file="submit_question_toadmin.html" type="html" module="Solutionexcel_Faqs" area="frontend"/>
+	<template id="faqs_answer_confirm_email_template" label="Answer Confirmation" file="answer_confirm.html" type="html" module="Solutionexcel_Faqs" area="adminhtml"/>
+</config>

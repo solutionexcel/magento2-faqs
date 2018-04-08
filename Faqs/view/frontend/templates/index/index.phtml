@@ -1,0 +1,35 @@
+<?php
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+?>
+<?php if($block->getFaqs()->getSize()>0): ?>
+<div id="seFaqa" class="collapsibleContainer faqs">
+	<?php foreach ($block->getFaqs() as $faq): ?>
+		<div class="collapsibleTab" data-role="collapsible">
+			<div class="faq-questions" data-role="trigger"><h2><?php echo $faq->getQuestions() ?></h2></div>
+		</div>
+		<div class="collapsibleContent faq-answers" data-role="content"><?php echo $faq->getAnswers(); ?></div>
+	<?php endforeach; ?>
+</div>
+<script>
+    require([
+        'jquery',
+        'accordion',
+		'domReady!'
+	], 
+	function ($) {
+        $("#seFaqa").accordion();
+    });
+</script>
+<?php else: ?>
+	<div class="message info empty"><div><?php echo __("We can't find any faqs items."); ?></div></div>
+<?php endif; ?>
+<div class="actions faq-submit-question">
+	<a href="<?php echo $block->qSubmitUrs(); ?>" class="action questions primary" title="Submit Questions">
+		<span><?php echo __("Submit Your Questions"); ?></span>
+	</a>
+</div>

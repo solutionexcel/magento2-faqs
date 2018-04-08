@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Solutionexcel_Faqs::Faqs" sortOrder="10" title="Faqs">
+					<resource id="Solutionexcel_Faqs::Faqs_save" sortOrder="10" title="Save Faqs"/>
+					<resource id="Solutionexcel_Faqs::Faqs_delete" sortOrder="20" title="Delete Faqs"/>
+					<resource id="Solutionexcel_Faqs::Faqs_update" sortOrder="30" title="Update Faqs"/>
+					<resource id="Solutionexcel_Faqs::Faqs_view" sortOrder="40" title="View Faqs"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

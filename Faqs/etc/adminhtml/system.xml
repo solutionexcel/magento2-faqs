@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+		<section id="solutionexcel_faqs" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>FAQs Configuration</label>
+            <tab>solutionexcel</tab>
+            <resource>Solutionexcel_Faqs::faqs_settings</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="is_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable frontend]]></comment>
+                </field>
+                <field id="sendemailto" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send To (Admin Email)</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="is_enabled">1</field>
+                    </depends>
+					<comment><![CDATA[User submit questions email copy send to.]]></comment>
+                </field>
+				<field id="is_enabled_captcha" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable CAPTCHA</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable CAPTCHA in submit question form. (STORE=>Configuration=>Customer Configuration=>CAPTCHA tab => Forms => FAQ Submit Question Form => Save Config)]]></comment>
+					<depends>
+                        <field id="is_enabled">1</field>
+                    </depends>
+                </field>
+			</group>
+        </section>
+    </system>
+</config>

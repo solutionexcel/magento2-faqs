@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Solutionexcel\Faqs\Api\FaqsRepositoryInterface" type="Solutionexcel\Faqs\Model\FaqsRepository"/>
+	<preference for="Solutionexcel\Faqs\Api\Data\FaqsInterface" type="Solutionexcel\Faqs\Model\Faqs"/>
+	<preference for="Solutionexcel\Faqs\Api\Data\FaqsSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Solutionexcel\Faqs\Model\ResourceModel\Faqs\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">solutionexcel_faqs_faqs</argument>
+			<argument name="resourceModel" xsi:type="string">Solutionexcel\Faqs\Model\ResourceModel\Faqs\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="solutionexcel_faqs_faqs_grid_data_source" xsi:type="string">Solutionexcel\Faqs\Model\ResourceModel\Faqs\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Solutionexcel_Faqs::solutionexcel_faqs_faqs" title="Manage Faqs" module="Solutionexcel_Faqs" sortOrder="10" resource="Solutionexcel_Faqs::solutionexcel_faqs_faqs" parent="Solutionexcel_Core::solutionexcel_menutop" action="solutionexcel_faqs/faqs/index" />
+		<add id="Solutionexcel_Faqs::faqs_settings" title="Configure Faqs" module="Solutionexcel_Faqs" sortOrder="20" resource="Solutionexcel_Faqs::faqs_settings" parent="Solutionexcel_Core::solutionexcel_menutop" action="adminhtml/system_config/edit/section/solutionexcel_faqs" />
+	</menu>
+</config>

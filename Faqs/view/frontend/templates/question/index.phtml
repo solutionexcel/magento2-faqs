@@ -1,0 +1,56 @@
+<?php
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+?>
+<form class="form submit question form-submit-question" action="<?php /* @escapeNotVerified */ echo $block->getPostActionUrl() ?>" method="post" id="form-validate" enctype="multipart/form-data" data-mage-init='{"validation": {"errorClass": "mage-error"}}' autocomplete="off">
+	<?php echo $this->getBlockHtml('formkey')?>
+	<div class="row-group section-userinfo">
+		<h2 class="block-group-title"><?php /* @escapeNotVerified */ echo __('Your Information') ?></h2>
+		<fieldset class="fieldset submit info">
+			<div class="field field-name required">
+				<label for="customer_name" class="label"><span><?php /* @escapeNotVerified */ echo __('Name') ?></span></label>
+				<div class="control">
+					<input type="text" name="customer_name" autocomplete="customer_name" id="customer_name" value="<?php echo $block->escapeHtml($block->getCustomerName()) ?>" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" class="input-text" data-validate="{required:true}">
+				</div>
+			</div>
+			<div class="field field-email required">
+				<label for="customer_email" class="label"><span><?php /* @escapeNotVerified */ echo __('Email') ?></span></label>
+				<div class="control">
+					<input type="email" name="customer_email" autocomplete="customer_email" id="customer_email" value="<?php echo $block->escapeHtml($block->getCustomerEmail()) ?>" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" class="input-text" data-validate="{required:true, 'validate-email':true}">
+				</div>
+			</div>
+			<div class="field field-question required">
+				<label for="questions" class="label"><span><?php /* @escapeNotVerified */ echo __('Enter Your Question') ?></span></label>
+				<div class="control">
+					<input type="text" name="questions" autocomplete="questions" id="questions" value="<?php echo $block->escapeHtml($block->getQuestions()) ?>" title="<?php /* @escapeNotVerified */ echo __('Your Question') ?>" class="input-text" data-validate="{required:true}">
+				</div>
+			</div>
+			<?php echo $block->getChildHtml('form.additional.info'); ?>
+		</fieldset>
+	</div>
+	<div class="actions-toolbar">
+		<div class="primary">
+			<button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Submit Your Question') ?>"><span><?php /* @escapeNotVerified */ echo __('Submit Your Question') ?></span></button>
+		</div>
+	</div>
+</form>
+<script>
+require([
+    'jquery',
+    'mage/mage',
+	'domReady!'
+], function($){
+
+    var dataForm = $('#form-validate');
+    var ignore = 'null';
+    
+    dataForm.mage('validation', {
+        ignore: ignore ? ':hidden:not(' + ignore + ')' : ':hidden'
+    }).find('input:text').attr('autocomplete', 'off');
+
+});
+</script>

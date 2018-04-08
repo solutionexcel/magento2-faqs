@@ -1,0 +1,21 @@
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "From Bangla: Answer for your question."}} @-->
+<!--@vars {
+"var email":"Customer Email",
+"var name":"Customer Name",
+"var questions":"Question",
+"var answers":"Answer"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">{{trans "%name," name=$name}}</p>
+<p>{{trans "Question: %questions." questions=$questions}}</p>
+<p>{{trans "Answer: %answers." answers=$answers}}</p>
+
+{{template config_path="design/email/footer_template"}}

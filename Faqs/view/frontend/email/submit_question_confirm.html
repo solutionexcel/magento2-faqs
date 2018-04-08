@@ -1,0 +1,20 @@
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "From Bangla: Confirmation for submit FAQ question."}} @-->
+<!--@vars {
+"var email":"Customer Email",
+"var name":"Customer Name",
+"var questions":"Question"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">{{trans "%name," name=$name}}</p>
+<p class="greeting">{{trans "Thank you for submit your enquiry."}}</p>
+<p>{{trans "Question: %questions." questions=$questions}}</p>
+
+{{template config_path="design/email/footer_template"}}

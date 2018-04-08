@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customer>
+            <captcha>
+                <shown_to_logged_in_user>
+                    <se_faq_form>1</se_faq_form>
+                </shown_to_logged_in_user>
+                <always_for>
+                    <se_faq_form>1</se_faq_form>
+                </always_for>
+            </captcha>
+        </customer>
+        <captcha translate="label">
+            <frontend>
+                <areas>
+                    <se_faq_form>
+                        <label>FAQ Submit Question Form</label>
+                    </se_faq_form>
+                </areas>
+            </frontend>
+        </captcha>
+    </default>
+</config>

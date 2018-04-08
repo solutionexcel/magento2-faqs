@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">solutionexcel_faqs_faqs_form.faqs_form_data_source</item>
+			<item name="deps" xsi:type="string">solutionexcel_faqs_faqs_form.faqs_form_data_source</item>
+		</item>
+		<item name="label" translate="true" xsi:type="string">General Information</item>
+		<item name="config" xsi:type="array">
+			<item name="dataScope" xsi:type="string">data</item>
+			<item name="namespace" xsi:type="string">solutionexcel_faqs_faqs_form</item>
+		</item>
+		<item name="template" xsi:type="string">templates/form/collapsible</item>
+		<item name="buttons" xsi:type="array">
+			<item name="back" xsi:type="string">Solutionexcel\Faqs\Block\Adminhtml\Faqs\Edit\BackButton</item>
+			<item name="delete" xsi:type="string">Solutionexcel\Faqs\Block\Adminhtml\Faqs\Edit\DeleteButton</item>
+			<item name="save" xsi:type="string">Solutionexcel\Faqs\Block\Adminhtml\Faqs\Edit\SaveButton</item>
+			<item name="save_and_continue" xsi:type="string">Solutionexcel\Faqs\Block\Adminhtml\Faqs\Edit\SaveAndContinueButton</item>
+		</item>
+	</argument>
+	<dataSource name="faqs_form_data_source">
+		<argument name="dataProvider" xsi:type="configurableObject">
+			<argument name="class" xsi:type="string">Solutionexcel\Faqs\Model\Faqs\DataProvider</argument>
+			<argument name="name" xsi:type="string">faqs_form_data_source</argument>
+			<argument name="primaryFieldName" xsi:type="string">faqs_id</argument>
+			<argument name="requestFieldName" xsi:type="string">faqs_id</argument>
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="submit_url" path="*/*/save" xsi:type="url"/>
+				</item>
+			</argument>
+		</argument>
+		<argument name="data" xsi:type="array">
+			<item name="js_config" xsi:type="array">
+				<item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+			</item>
+		</argument>
+	</dataSource>
+	<fieldset name="General">
+		<argument name="data" xsi:type="array">
+			<item name="config" xsi:type="array">
+				<item name="label" xsi:type="string"/>
+			</item>
+		</argument>
+		<field name="questions">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="dataType" xsi:type="string">text</item>
+					<item name="label" translate="true" xsi:type="string">Questions</item>
+					<item name="formElement" xsi:type="string">input</item>
+					<item name="source" xsi:type="string">Faqs</item>
+					<item name="sortOrder" xsi:type="number">10</item>
+					<item name="dataScope" xsi:type="string">questions</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+		</field>
+		<field name="answers">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="dataType" xsi:type="string">text</item>
+					<item name="label" translate="true" xsi:type="string">Answers</item>
+					<item name="formElement" xsi:type="string">textarea</item>
+					<item name="source" xsi:type="string">Faqs</item>
+					<item name="sortOrder" xsi:type="number">20</item>
+					<item name="dataScope" xsi:type="string">answers</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">true</item>
+					</item>
+				</item>
+			</argument>
+		</field>
+		<field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">number</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">status</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                    <item name="options" xsi:type="array">                       
+                        <item name="0" xsi:type="array">
+                            <item name="label" xsi:type="string">No</item>
+                            <item name="value" xsi:type="string">0</item>
+                        </item>
+                        <item name="1" xsi:type="array">
+                            <item name="label" xsi:type="string">Yes</item>
+                            <item name="value" xsi:type="string">1</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </field> 
+		<field name="order">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="dataType" xsi:type="string">text</item>
+					<item name="label" translate="true" xsi:type="string">Order</item>
+					<item name="formElement" xsi:type="string">input</item>
+					<item name="source" xsi:type="string">Faqs</item>
+					<item name="sortOrder" xsi:type="number">40</item>
+					<item name="dataScope" xsi:type="string">order</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">false</item>
+					</item>
+				</item>
+			</argument>
+		</field>
+		
+		<!-- <field name="customer_name">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="dataType" xsi:type="string">text</item>
+					<item name="label" translate="true" xsi:type="string">Customer Name</item>
+					<item name="formElement" xsi:type="string">input</item>
+					<item name="source" xsi:type="string">Faqs</item>
+					<item name="sortOrder" xsi:type="number">50</item>
+					<item name="dataScope" xsi:type="string">customer_name</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">false</item>
+					</item>
+				</item>
+			</argument>
+		</field>
+		<field name="customer_email">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="dataType" xsi:type="string">text</item>
+					<item name="label" translate="true" xsi:type="string">Customer Email</item>
+					<item name="formElement" xsi:type="string">input</item>
+					<item name="source" xsi:type="string">Faqs</item>
+					<item name="sortOrder" xsi:type="number">60</item>
+					<item name="dataScope" xsi:type="string">customer_email</item>
+					<item name="validation" xsi:type="array">
+						<item name="required-entry" xsi:type="boolean">false</item>
+					</item>
+				</item>
+			</argument>
+		</field> -->
+		
+	</fieldset>
+</form>

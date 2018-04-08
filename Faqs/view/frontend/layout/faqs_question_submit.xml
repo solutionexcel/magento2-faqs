@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Solutionexcel_Faqs
+ * @author      SolutionExcel - https://www.solutionexcel.com/ - info@solutionexcel.com
+ * @copyright   Copyright © 2018 SolutionExcel. All rights reserved.
+ * @license     https://opensource.org/licenses/AFL-3.0  Academic Free License 3.0 | Open Source Initiative
+**/
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+        <title>Submit Your Questions</title>
+    </head>
+	<body>
+		<referenceBlock name="breadcrumbs">
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Home</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Home</item>
+                    <item name="label" xsi:type="string">Home</item>
+                    <item name="link" xsi:type="string">{{baseUrl}}</item>
+                </argument>
+            </action>
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Submit Question</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Submit Question</item>
+                    <item name="label" xsi:type="string">Submit Question</item>
+                </argument>
+            </action>
+        </referenceBlock>
+		<referenceBlock name="page.main.title">
+		   <action method="setPageTitle">
+			  <argument translate="true" name="title" xsi:type="string">Submit Your Questions</argument>
+		   </action>
+		</referenceBlock>
+		<referenceContainer name="content">
+			<block class="Solutionexcel\Faqs\Block\Question\Index" name="question.index" ifconfig="solutionexcel_faqs/general/is_enabled" template="Solutionexcel_Faqs::question/index.phtml">
+				<container name="form.additional.info" label="Form Additional Info">
+                    <block class="Magento\Captcha\Block\Captcha" name="captcha" after="-" cacheable="false">
+                        <action method="setFormId">
+                            <argument name="formId" xsi:type="string">se_faq_form</argument>
+                        </action>
+                        <action method="setImgWidth">
+                            <argument name="width" xsi:type="string">230</argument>
+                        </action>
+                        <action method="setImgHeight">
+                            <argument name="width" xsi:type="string">50</argument>
+                        </action>
+                    </block>
+                </container>
+			</block>
+		</referenceContainer>
+		<referenceBlock name="head.components">
+            <block class="Magento\Framework\View\Element\Js\Components" name="captcha_page_head_components" ifconfig="solutionexcel_faqs/general/is_enabled" template="Magento_Captcha::js/components.phtml"/>
+        </referenceBlock>
+	</body>
+</page>
